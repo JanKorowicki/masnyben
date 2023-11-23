@@ -1,0 +1,43 @@
+#class: blueprint for creating new objects
+#object: instance of class
+
+#class: humans
+#object: johnny, martin
+#class Point:#klase piszemy z wielkiej
+    #deafult_color = "red"
+    #def __init__(self, x, y):#od razu uruchamia czynnosc przy wlaczeniu klasy
+        #self.x = x
+        #self.y = y
+    #def draw(self):
+        #print(f"Point ({self.x}, {self.y})")
+#point = Point()
+#point.draw()
+#print(type(point))#daje nam klase tej zmiennej
+#print(isinstance(point, Point))#sprawdza czy podana zmienna ma taką klase
+
+#point = Point(1,2)
+#point.z = 10#dodajemy nowy atrybut
+#point.draw()
+#print(point.deafult_color)
+#another = Point(3, 4)
+#another.draw()
+
+class Book:
+    title = "sus"
+    autor = "szwed"
+    year = 1999
+    is_available = True
+
+class Library:
+    def __init__(self):
+        self.books = []
+    def add_book(self, book):
+        self.books.append(book.title)
+    def display_books(self):
+        print(self.books)
+    def borrow_book(self, title):
+
+ksiazka = Book()
+lib = Library()
+lib.add_book(ksiazka)
+lib.display_books()
