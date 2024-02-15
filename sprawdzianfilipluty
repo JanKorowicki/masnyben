@@ -1,0 +1,12 @@
+import re
+tekst = "(...) Historia przegiegu tranzakcji sklepu X: anna_kowalska@wp.pl zakupił(a) produkt od marcin.lewandowski@gmail.org jakiś czas potem sprzedając go dalej dodając marżę w wysokości 25% tak że produkt wylądował u johnDoe@sample.net. Następnie historia traci klarowność - w bazie mamy informację jedynie o adresie unknown-person@o2.pl"
+wzorzec = re.compile(r'[0-9a-z@_/.-]+(?=\.pl)')
+wynik = (wzorzec.findall(tekst))
+ilosc = len(wynik)
+print(f"jest ich {ilosc} i sa to {wynik}")
+
+with open('numery.txt') as numery:
+    numery = numery.read()
+    wzo = re.compile(r'0-9{3,}')
+    wyn = wzo.findall(numery)
+    print(wyn)
